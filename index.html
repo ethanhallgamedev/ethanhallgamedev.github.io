@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ethan Hall | Game Development</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header / Navigation -->
+    <header class="site-header">
+
+        <div class="site-title">
+            Ethan Hall Game Development Portfolio
+        </div>
+
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="featured-projects.html">Featured Projects</a>
+            <a href="design-work.html">Design Work</a>
+            <a href="about.html">About Me</a>
+        </nav>
+
+    </header>
+
+    <!-- Full-page background -->
+    <div class="page-background"></div>
+
+    <!-- Everything that sits on top of the background -->
+    <main class="main-section">
+
+        <!-- =========================================
+             BANNER
+             ========================================= -->
+        <section class="banner">
+            <img
+                src="images/banner.png"
+                alt="Spaghetti Spell gameplay"
+            >
+        </section>
+
+
+        <!-- =========================================
+             MAIN CONTENT
+             ========================================= -->
+        <div class="content-layout">
+
+            <!-- 60% CONTENT COLUMN -->
+            <section class="content-column">
+
+                <article class="about-card">
+
+                    <h1>What is Spaghetti Spell?</h1>
+
+                    <p>
+                        Spaghetti Spell is a game I developed during my time as
+                        a Technical Design student at University of Central
+                        Florida's Florida Interactive Entertainment Academy
+                        graduate program.
+                    </p>
+
+                    <p>
+                        This project is a short, <strong>systems-heavy farming game</strong>
+                        in which I designed and implemented a magic system
+                        where different crops serve as magical reagents for
+                        your spells.
+                    </p>
+
+                    <p>
+                        Additionally, I implemented a <strong>Utility AI system</strong> that
+                        takes the form of swarms of bees that explore the
+                        world and whose behavior can be dynamically modified
+                        by the player.
+                    </p>
+
+                    <p>
+                        This game was developed in Unity, and I am the <strong>sole
+                        programmer and designer</strong>. For art, I brought in and
+                        implemented asset packs I found online, and made some
+                        pixel art myself in Aseprite for a few of the plants.
+                    </p>
+
+                    <!-- Additional image -->
+                    <div class="content-image">
+                        <img
+                            src="images\Spaghetti Spell Hello World Gif.gif"
+                            alt="Spaghetti Spell bees spelling out 'Hello World'"
+                        >
+                    </div>
+
+                    <h1 class="subtitle">The Design Behind Spaghetti Spell</h1>
+
+                    <p>
+                        Every crop should be unique and mechanically useful; that is the main ethos behind Spaghetti Spell. 
+                        The systems in place aim to accomplish that by using crops as spell components. 
+                        Depending on the spell that the player needs to cast, any crop can become valuable 
+                        irrespective of how much they cost or how much they sell for.
+                    </p>
+
+                    <details>
+                        <p>
+                            My goal with Spaghetti Spell was to add an interesting twist to the farming game genre; too often for my liking, the crops you plant in these games are fundamentally just little bundles of money. Outside of one-off quests, it usually doesn't mechanically matter what you grow.
+                        </p>
+                        <p>
+                            And before I go further I should say: that's not necessarily a bad thing design-wise, even if I'm not the target audience for that particular approach. If a game puts most of its focus into empowering the player to design and customize their farm as much as possible visually, then it makes a lot of sense for crops to be distinguished mostly by aesthetics rather than mechanics. The player shouldn't be punished for choosing the aesthetics that they feel best represent their vision.
+                        </p>
+                        <p>
+                            That being said, I personally wanted to explore a design space that allows every crop to be mechanically interesting and useful, and I decided to do that by making a magic system that uses crops as inputs and drivers behind spells. Different crops represent different actions that a spell can take and/or data that a spell can read and use to modify what actions it takes. This system is heavily inspired by visual scripting languages like Unreal Engine's Blueprints. 
+                        </p>
+                        <p>
+                            These next design bits dive into some blue sky concepts that either didn't make it in to this small demo, or only partially made it in. Namely, I love the idea of the player having to learn what a particular plant does by studying its historical and modern associations and meanings. Wheat and other grains, for example, were commonly used as offerings to spirits and gods by ancient peoples. I played with that association in game by making wheat the "Beseech" node, which gives a task to some entity in the world (bees in the demo's case) and asks that entity to complete the task.
+                        </p>
+                        <p>
+                            As I've said, the magic system is heavily inspired by coding, so it does run the risk of feeling more clinical and scientific than I would want a farming game to feel. Playing with the meanings and associations behind certain plants is a good way to soften the system I think, and ground it even more in nature and the earth where it belongs.
+                        </p>
+                        <summary>
+                            <strong>Want a more in-depth design breakdown? Click here!</strong>
+                        </summary>
+                    </details>
+
+                    <h1 class="subtitle">Challenges: The Magic System</h1>
+
+                    <div class="content-image">
+                        <img
+                            src="images\Spaghetti Spell Root Connections.gif"
+                            alt="Roots growing, encapsulating and connecting crops."
+                        >
+                    </div>
+
+
+
+                    <h2 class="subtitle">Connecting crops to each other</h2>
+
+                    <p>
+                        An important aspect of the magic system is the ability to connect crops together to form your spells. But how does the player actually do that? 
+                    </p>
+                    <p>
+                        I needed to implement a thematic and intuitive way to connect crops, and it didn't take long to land on the idea of connecting them via roots. It was a very natural fit given the genre, and they remind me at least of the wires used in visual scripting languages. 
+                    </p>
+                    <p>
+                        To make that concept work, I decided to differentiate between two main configurations of roots: closed shapes and lines. Closed shapes encapsulate crops and lines connect two closed shapes, and therefore crops, together. Detecting whether a root network is closed or a line, as well as detecting the endpoints of lines, were their own sub challenges for sure. But nothing I couldn't nail down with a little trial and error.
+                    </p>
+                    <p><strong>
+                        QUESTION: Should I add code snippets here? Should I try to commit harder to one side of design or programming?
+                    </strong></p>
+
+
+
+                    <h2 class="subtitle">Sending generic data to and from crops</h2>
+
+                    <p>
+                        An important aspect of the magic system is the ability to connect crops together to form your spells. But how does the player actually do that? 
+                    </p>
+                    <p>
+                        I needed to implement a thematic and intuitive way to connect crops, and it didn't take long to land on the idea of connecting them via roots. It was a very natural fit given the genre, and they remind me at least of the wires used in visual scripting languages. 
+                    </p>
+                    <p>
+                        To make that concept work, I decided to differentiate between two main configurations of roots: closed shapes and lines. Closed shapes encapsulate crops and lines connect two closed shapes, and therefore crops, together. Detecting whether a root network is closed or a line, as well as detecting the endpoints of lines, were their own sub challenges for sure. But nothing I couldn't nail down with a little trial and error.
+                    </p>
+                    <p>
+                        To make that concept work, I decided to differentiate between two main configurations of roots: closed shapes and lines. Closed shapes encapsulate crops and lines connect two closed shapes, and therefore crops, together. Detecting whether a root network is closed or a line, as well as detecting the endpoints of lines, were their own sub challenges for sure. But nothing I couldn't nail down with a little trial and error.
+                    </p>
+
+                </article>
+
+            </section>
+
+
+            <!-- 40% SCREENSHOT COLUMN -->
+            <section class="screenshots-column">
+
+                <!-- Video / first screenshot -->
+                <div class="media-card video-card">
+                    <iframe
+                        src="https://www.youtube.com/embed/3ba8UR9adFc"
+                        title="Spaghetti Spell Demo"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+
+                <!-- Screenshot 1 -->
+                <div class="media-card">
+                    <img
+                        src="images/gameplay-1.png"
+                        alt="Spaghetti Spell gameplay"
+                    >
+                </div>
+
+
+                <!-- Screenshot 2 -->
+                <div class="media-card">
+                    <img
+                        src="images/gameplay-2.png"
+                        alt="Spaghetti Spell gameplay at night"
+                    >
+                </div>
+
+
+                <!-- Screenshot 3 -->
+                <div class="media-card">
+                    <img
+                        src="images/gameplay-3.png"
+                        alt="Spaghetti Spell gameplay"
+                    >
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
