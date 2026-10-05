@@ -1,0 +1,460 @@
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #1f2d22;
+
+    /* Prevent the background layer from creating horizontal scroll */
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   FULL PAGE BACKGROUND
+   ========================================= */
+
+/*
+    This sits behind everything and covers the
+    entire viewport.
+*/
+
+.page-background {
+    position: fixed;
+
+    inset: 0;
+
+    width: 120%;
+    height: 120%;
+
+    z-index: -1;
+
+    background-image: url("images/sky-background.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* =========================================
+   SITE HEADER
+   ========================================= */
+
+.site-header {
+    width: 100%;
+    height: 52px;
+
+    margin: 0;
+    padding: 0 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #eef1f4;
+
+    /* No outline */
+    border: none;
+
+    /* Square corners */
+    border-radius: 0;
+
+    color: #222;
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* =========================================
+   SITE TITLE
+   ========================================= */
+
+.site-title {
+    font-size: 15px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.site-nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+.site-nav a {
+    position: relative;
+
+    color: #6e3b3b;
+
+    font-size: 15px;
+
+    text-decoration: none;
+
+    padding: 4px 0;
+}
+
+
+/*
+    Underline effect
+*/
+
+.site-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 2px;
+
+    background-color: #8d4949;
+}
+
+
+/*
+    Slight hover effect
+*/
+
+.site-nav a:hover {
+    color: #ff4f4f;
+}
+
+.site-nav a:hover::after {
+    background-color: #ff4f4f;
+}
+
+/* =========================================
+   MAIN SECTION
+   ========================================= */
+
+/*
+    The central section containing all of the
+    portfolio content.
+
+    Approximately 50% of the viewport width.
+*/
+
+.main-section {
+    width: 45vw;
+
+    min-width: 650px;
+
+    margin: 0 auto;
+
+    min-height: 100vh;
+
+    background-color: #eef8ecf8;
+
+    /* Allows content to determine the height */
+    overflow: hidden;
+}
+
+
+/* =========================================
+   BANNER
+   ========================================= */
+
+/*
+    The banner stretches across the entire
+    width of the main section.
+*/
+
+.banner {
+    width: 100%;
+
+    height: 300px;
+
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* =========================================
+   CONTENT / SCREENSHOT LAYOUT
+   ========================================= */
+
+.content-layout {
+    display: grid;
+
+    /*
+        60% content
+        40% screenshots
+    */
+    grid-template-columns: 60% 40%;
+
+    align-items: stretch;
+
+    width: 100%;
+}
+
+
+/* =========================================
+   LEFT CONTENT COLUMN
+   ========================================= */
+
+.content-column {
+    padding: 0;
+}
+
+
+/*
+    Main text/content area.
+
+    No border or outline — the colored
+    background belongs to the main section.
+*/
+
+.about-card {
+    margin: 0;
+
+    padding: 14px;
+
+    min-height: 450px;
+
+    background: transparent;
+}
+
+.about-card h1, .about-card h2 {
+    margin-bottom: 10px;
+
+    color: #124d20;
+
+    font-size: 1.8rem;
+    font-style: bold;
+
+    line-height: 1.4;
+}
+
+.about-card h2{
+    font-size: 1.5rem;
+}
+
+.subtitle {
+    margin-top: 20px;
+}
+
+.about-card p {
+    margin-bottom: 14px;
+
+    color: #233328;
+
+    font-size: 1.1rem;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================
+   CONTENT IMAGE
+   ========================================= */
+
+.content-image {
+    width: 100%;
+
+    margin-top: 12px;
+
+    overflow: hidden;
+}
+
+.content-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   RIGHT SCREENSHOT COLUMN
+   ========================================= */
+
+.screenshots-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 20px;
+}
+
+
+/*
+    Individual screenshots.
+
+    No borders — these simply sit next
+    to one another.
+*/
+
+.media-card {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background-color: #111;
+}
+
+.media-card img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   VIDEO CARD
+   ========================================= */
+
+.video-card {
+    position: relative;
+}
+
+.video-card img {
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+}
+
+
+/*
+    Fake YouTube-style play button.
+
+    You can replace the entire video card
+    with a real iframe later.
+*/
+
+.video-card {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background-color: #000;
+}
+
+.video-card iframe {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+}
+
+
+/* =========================================
+   SCREENSHOT HOVER
+   ========================================= */
+
+.media-card img {
+    transition: transform 0.25s ease;
+}
+
+.media-card:hover img {
+    transform: scale(1.02);
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+/*
+    Once the screen becomes too narrow for
+    the desktop composition, stack everything.
+*/
+
+@media (max-width: 900px) {
+
+    .main-section {
+        width: 90vw;
+
+        min-width: 0;
+    }
+
+    .content-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .screenshots-column {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .banner {
+        height: 130px;
+    }
+}
+
+
+/*
+    Phone layout
+*/
+
+@media (max-width: 600px) {
+
+    .main-section {
+        width: 100vw;
+    }
+
+    .banner {
+        height: 110px;
+    }
+
+    .screenshots-column {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card {
+        padding: 18px;
+    }
+
+    .about-card p {
+        font-size: 0.85rem;
+    }
+}
