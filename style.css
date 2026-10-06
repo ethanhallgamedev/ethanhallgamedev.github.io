@@ -56,7 +56,7 @@ body {
 
 .site-header {
     width: 100%;
-    height: 52px;
+    height: 6vh;
 
     margin: 0;
     padding: 0 5%;
@@ -85,7 +85,7 @@ body {
    ========================================= */
 
 .site-title {
-    font-size: 15px;
+    font-size: 1.5rem;
 
     white-space: nowrap;
 }
@@ -100,7 +100,7 @@ body {
 
     align-items: center;
 
-    gap: 22px;
+    gap: 3rem;
 }
 
 .site-nav a {
@@ -108,7 +108,7 @@ body {
 
     color: #6e3b3b;
 
-    font-size: 15px;
+    font-size: 1.5rem;
 
     text-decoration: none;
 
@@ -159,7 +159,7 @@ body {
 */
 
 .main-section {
-    width: 45vw;
+    width: 55vw;
 
     min-width: 650px;
 
@@ -170,7 +170,7 @@ body {
     background-color: #eef8ecf8;
 
     /* Allows content to determine the height */
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 
@@ -253,26 +253,26 @@ body {
 
     color: #124d20;
 
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-style: bold;
 
     line-height: 1.4;
 }
 
 .about-card h2{
-    font-size: 1.5rem;
+    font-size: 1.9rem;
 }
 
 .subtitle {
-    margin-top: 20px;
+    margin-top: 3rem;
 }
 
-.about-card p {
+.about-card p, .about-card summary{
     margin-bottom: 14px;
 
-    color: #233328;
+    color: #000000;
 
-    font-size: 1.1rem;
+    font-size: 1.5rem;
 
     line-height: 1.45;
 }
@@ -306,14 +306,14 @@ body {
 
 .screenshots-column {
     display: flex;
-
     flex-direction: column;
-
     gap: 15px;
-
     padding: 20px;
-}
 
+    position:sticky;
+    top: 1rem;
+    align-self: start;
+}
 
 /*
     Individual screenshots.
@@ -457,4 +457,148 @@ body {
     .about-card p {
         font-size: 0.85rem;
     }
+}
+
+/*
+Atlas Will Fall variations
+*/
+
+.atlas .page-background{
+    background-image: none;
+    background-color: #494949;
+}
+
+.atlas h1, .atlas h2{
+    color: #000;
+}
+
+.atlas .main-section {
+    background-color: #ecedf8f8;
+}
+
+.top-margin-40px {
+    margin-top:2rem;
+}
+
+.atlas .image-explanation{
+    margin-bottom: 40px;
+    margin-top: 10px; 
+    margin-left: 40px; 
+    color: rgb(57, 57, 57);
+}
+
+.home .main-section{
+    background-color: #ffffff;
+}
+
+.home .page-background {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: auto;
+
+    z-index: -1;
+
+    background-image: url("home-media/Main Page BG.png");
+
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: repeat-y;
+}
+
+.home .content-layout {
+    
+    padding-top: 3rem;
+
+    grid-template-columns: 100% 0%;
+
+    align-items: stretch;
+
+    width: 100%;
+
+}
+
+.home h1{
+    font-size: 4rem;
+    color: #000;
+}
+
+.home h2{
+    font-size: 2.8rem;
+    color: #000;
+}
+
+.home h3{
+    font-size: 2.3rem;
+    color: #000;
+}
+
+.home p{
+    font-size: 2rem;
+    color: #000;
+}
+
+hr{
+    border-top: 3px solid black;
+    width:70%;
+    margin: 2rem auto;
+}
+
+.home-page-vertical-divide{
+    margin-top: 6rem;
+}
+
+.featured-games-layout{
+    display: grid;
+
+    grid-template-columns: 50% 50%;
+    
+    gap: 1rem;
+
+    align-items: stretch;
+    
+    width: 100%;
+}
+
+.featured-games-layout .project-thumbnail{
+    /* background-color: #000; */
+    /* outline: 3px solid black; */
+}
+
+.project-thumbnail .content-image{
+    margin-top: 0;
+
+    border-radius: 2rem;
+
+    width: 640px;
+    height: 400px;
+}
+
+.project-thumbnail h3{
+    margin: 2rem;
+    color: rgb(210, 81, 46);
+}
+
+.project-thumbnail h3:hover{
+    color: rgb(238, 73, 27);
+}
+
+.project-thumbnail a{
+    text-decoration: none;
+}
+
+.project-thumbnail p{
+    margin: 2rem;
+}
+
+.main-section li{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.main-section ul{
+    margin-left: 3rem;
+    margin-bottom: 3rem;
 }
