@@ -36,12 +36,12 @@
         <!-- =========================================
              BANNER
              ========================================= -->
-        <section class="banner">
+        <!-- <section class="banner">
             <img
                 src="images/banner.png"
                 alt="Spaghetti Spell gameplay"
             >
-        </section>
+        </section> -->
 
 
         <!-- =========================================
@@ -54,9 +54,19 @@
 
                 <article class="about-card">
 
-                    <h1>What is Spaghetti Spell?</h1>
+                    <!-- Video / first screenshot -->
+                    <div class="media-card video-card">
+                        <iframe
+                            src="https://www.youtube.com/embed/3ba8UR9adFc"
+                            title="Spaghetti Spell Demo"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
 
-                    <p>
+                    <h1 class="subtitle">What is Spaghetti Spell?</h1>
+
+                    <p class="top-margin-40px">
                         Spaghetti Spell is a game I developed during my time as
                         a Technical Design student at University of Central
                         Florida's Florida Interactive Entertainment Academy
@@ -73,8 +83,8 @@
                     <p>
                         Additionally, I implemented a <strong>Utility AI system</strong> that
                         takes the form of swarms of bees that explore the
-                        world and whose behavior can be dynamically modified
-                        by the player.
+                        world in search of flowers, return to flowers when they're hungry, return home when they're tired, 
+                        and whose behavior can be dynamically modified by the player.
                     </p>
 
                     <p>
@@ -91,6 +101,7 @@
                             alt="Spaghetti Spell bees spelling out 'Hello World'"
                         >
                     </div>
+                    <p class="image-explanation">The player can cast a spell to modify the behavior of the bee AI to spell out "Hello World". This behavior is also managed by the utility system mentioned earlier.</p>
 
                     <h1 class="subtitle">The Design Behind Spaghetti Spell</h1>
 
@@ -122,67 +133,120 @@
                         </summary>
                     </details>
 
+                    
+                    
                     <h1 class="subtitle">Challenges: The Magic System</h1>
+                    <details>
+                        <div class="content-image">
+                            <img
+                                src="images\Spaghetti Spell Root Connections.gif"
+                                alt="Roots growing, encapsulating and connecting crops."
+                            >
+                        </div>
 
-                    <div class="content-image">
-                        <img
-                            src="images\Spaghetti Spell Root Connections.gif"
-                            alt="Roots growing, encapsulating and connecting crops."
-                        >
-                    </div>
+                        <h2 class="subtitle">Connecting crops to each other</h2>
+                        <p>
+                            An important aspect of the magic system is the ability to connect crops together to form your spells. But how does the player actually do that? 
+                        </p>
+                        <p>
+                            I needed to implement a thematic and intuitive way to connect crops, and it didn't take long to land on the idea of connecting them via roots. It was a very natural fit given the genre, and they remind me at least of the wires used in visual scripting languages. 
+                        </p>
+                        <p>
+                            To make that concept work, I decided to differentiate between two main configurations of roots: closed shapes and lines. Closed shapes encapsulate crops and lines connect two closed shapes, and therefore crops, together. Detecting whether a root network is closed or a line, as well as detecting the endpoints of lines, were their own sub challenges for sure. But nothing I couldn't nail down with a little trial and error.
+                        </p>
+                            
+                        <h2 class="subtitle">Sending generic data to and from crops</h2>
+                        <p>
+                            In this system, crops function very similarly to nodes in a visual scripting language. They can take in data, perform operations using that data, and provide new data to other crops.                    </p>
+                        <p>
+                            Once I decided this is how I wanted the crops to work, I needed to solve the problem of how exactly two crops should communicate with each other, given that neither can explicitly know about the other.                    </p>
+                        <p>
+                            The implementation I eventually landed on made heavy use of Unity's robust component system. A crop, when activated, would publish its output data by adding new components that contain said data to the crop GameObject itself. This does have some overhead since every piece of data needs to be encapsulated in a MonoBehavior. But the ease by which crops could search other connected crops for data  simply by using built in functions like TryGetComponent<T>() made this an attractive solution to me nonetheless.
+                        </p>
+                        <p>
+                            By taking this approach, connected crops could publish and receive whatever data that wanted easily and without needing to know anything about what exact type of crop they were connected to. 
+                        </p>
+
+                        <summary>
+                            <strong>Click here</strong>
+                        </summary>
+                        
+                    </details>
 
 
 
-                    <h2 class="subtitle">Connecting crops to each other</h2>
+                    <h1 class="subtitle">Challenges: The AI</h1>
+                    <details>
+                        <div class="content-image">
+                            <img
+                                src="images\Spaghetti Spell Root Connections.gif"
+                                alt="Roots growing, encapsulating and connecting crops."
+                            >
+                        </div>
 
-                    <p>
-                        An important aspect of the magic system is the ability to connect crops together to form your spells. But how does the player actually do that? 
-                    </p>
-                    <p>
-                        I needed to implement a thematic and intuitive way to connect crops, and it didn't take long to land on the idea of connecting them via roots. It was a very natural fit given the genre, and they remind me at least of the wires used in visual scripting languages. 
-                    </p>
-                    <p>
-                        To make that concept work, I decided to differentiate between two main configurations of roots: closed shapes and lines. Closed shapes encapsulate crops and lines connect two closed shapes, and therefore crops, together. Detecting whether a root network is closed or a line, as well as detecting the endpoints of lines, were their own sub challenges for sure. But nothing I couldn't nail down with a little trial and error.
-                    </p>
-                    <p><strong>
-                        QUESTION: Should I add code snippets here? Should I try to commit harder to one side of design or programming?
-                    </strong></p>
+                        <h2 class="subtitle">Making the bees behave like bees</h2>
+                        <p>
+                            An important aspect of the magic system is the ability to connect crops together to form your spells. But how does the player actually do that? 
+                        </p>
+                        <p>
+                            I needed to implement a thematic and intuitive way to connect crops, and it didn't take long to land on the idea of connecting them via roots. It was a very natural fit given the genre, and they remind me at least of the wires used in visual scripting languages. 
+                        </p>
+                        <p>
+                            To make that concept work, I decided to differentiate between two main configurations of roots: closed shapes and lines. Closed shapes encapsulate crops and lines connect two closed shapes, and therefore crops, together. Detecting whether a root network is closed or a line, as well as detecting the endpoints of lines, were their own sub challenges for sure. But nothing I couldn't nail down with a little trial and error.
+                        </p>
+                            
+                        <h2 class="subtitle">Optimization</h2>
+                        <p>
+                            In this system, crops function very similarly to nodes in a visual scripting language. They can take in data, perform operations using that data, and provide new data to other crops.                    </p>
+                        <p>
+                            Once I decided this is how I wanted the crops to work, I needed to solve the problem of how exactly two crops should communicate with each other, given that neither can explicitly know about the other.                    </p>
+                        <p>
+                            The implementation I eventually landed on made heavy use of Unity's robust component system. A crop, when activated, would publish its output data by adding new components that contain said data to the crop GameObject itself. This does have some overhead since every piece of data needs to be encapsulated in a MonoBehavior. But the ease by which crops could search other connected crops for data  simply by using built in functions like TryGetComponent<T>() made this an attractive solution to me nonetheless.
+                        </p>
+                        <p>
+                            By taking this approach, connected crops could publish and receive whatever data that wanted easily and without needing to know anything about what exact type of crop they were connected to. 
+                        </p>
 
+                        <summary>
+                            <strong>Click here</strong>
+                        </summary>
+                        
+                    </details>
+                    
+                    
+                    
+                    <h1 class="subtitle">Usage of AI Tools (ChatGPT)</h1>
+                    <details>
+                        <h2 class="subtitle">What I didn't use them for</h2>
+                        <ul>
+                            <li>Design decisions</li>
+                            <li>Architectural decisions</li>
+                            <li>Influencing either of the solutions I came up with for the Magic System challenges discussed earlier</li>
+                        </ul>
+                            
+                        <h2 class="subtitle">What I did use them for</h2>
+                        <ul>
+                            <li>Research, specifically on flocking algorithms and how to optimize them</li>
+                            <li>Refreshers on algorithms I have written before, like A Star</li>
+                            <li>Helping to find and understand bugs</li>
+                            <li>Limited code generation*</li>
+                        </ul>
+                        <p>*By "limited code generation", I'm referring to an experiment I did because I was curious about ChatGPT's ability to convert pseudocode into working code. I built out most of the bee Utility AI system (regular AI, not generative AI), and I pseudocoded the requirements to make a bee stop and wait for a bit once it reaches a particular task.</p>
+                        <p>I gave that pseudocode to ChatGPT and verified and tested the code it outputed to make sure it worked as I wanted, and didn't break any of the other systems. It was a fun little experiment.</p>
+                        <p><strong>Note:</strong> "pseudocode" is just code that's written in natural language, rather than in a programming language. It's a good way to organize your thoughts before translating them into actual code.</p>
 
-
-                    <h2 class="subtitle">Sending generic data to and from crops</h2>
-
-                    <p>
-                        An important aspect of the magic system is the ability to connect crops together to form your spells. But how does the player actually do that? 
-                    </p>
-                    <p>
-                        I needed to implement a thematic and intuitive way to connect crops, and it didn't take long to land on the idea of connecting them via roots. It was a very natural fit given the genre, and they remind me at least of the wires used in visual scripting languages. 
-                    </p>
-                    <p>
-                        To make that concept work, I decided to differentiate between two main configurations of roots: closed shapes and lines. Closed shapes encapsulate crops and lines connect two closed shapes, and therefore crops, together. Detecting whether a root network is closed or a line, as well as detecting the endpoints of lines, were their own sub challenges for sure. But nothing I couldn't nail down with a little trial and error.
-                    </p>
-                    <p>
-                        To make that concept work, I decided to differentiate between two main configurations of roots: closed shapes and lines. Closed shapes encapsulate crops and lines connect two closed shapes, and therefore crops, together. Detecting whether a root network is closed or a line, as well as detecting the endpoints of lines, were their own sub challenges for sure. But nothing I couldn't nail down with a little trial and error.
-                    </p>
+                        <summary>
+                            <strong>Click here</strong>
+                        </summary>
+                        
+                    </details>
 
                 </article>
 
             </section>
 
 
-            <!-- 40% SCREENSHOT COLUMN -->
             <section class="screenshots-column">
-
-                <!-- Video / first screenshot -->
-                <div class="media-card video-card">
-                    <iframe
-                        src="https://www.youtube.com/embed/3ba8UR9adFc"
-                        title="Spaghetti Spell Demo"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-
 
                 <!-- Screenshot 1 -->
                 <div class="media-card">

@@ -44,6 +44,9 @@ body {
     z-index: -1;
 
     background-image: url("images/sky-background.png");
+    
+    background-color: rgba(70, 73, 73, 0.5); 
+    background-blend-mode: multiply; 
 
     background-size: cover;
     background-position: center center;
@@ -85,7 +88,7 @@ body {
    ========================================= */
 
 .site-title {
-    font-size: 1.5rem;
+    font-size: 1rem;
 
     white-space: nowrap;
 }
@@ -108,7 +111,7 @@ body {
 
     color: #6e3b3b;
 
-    font-size: 1.5rem;
+    font-size: 1rem;
 
     text-decoration: none;
 
@@ -159,11 +162,13 @@ body {
 */
 
 .main-section {
-    width: 55vw;
+    width: 60vw;
 
     min-width: 650px;
 
     margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 
     min-height: 100vh;
 
@@ -214,11 +219,15 @@ body {
         60% content
         40% screenshots
     */
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 100% 0%;
 
     align-items: stretch;
 
     width: 100%;
+}
+
+.span-columns {
+    grid-column: 1/-1;
 }
 
 
@@ -241,7 +250,7 @@ body {
 .about-card {
     margin: 0;
 
-    padding: 14px;
+    padding: 2rem;
 
     min-height: 450px;
 
@@ -253,26 +262,33 @@ body {
 
     color: #124d20;
 
-    font-size: 2.5rem;
+    font-size: 2.1rem;
     font-style: bold;
 
     line-height: 1.4;
 }
 
 .about-card h2{
-    font-size: 1.9rem;
+    font-size: 1.7rem;
 }
 
 .subtitle {
     margin-top: 3rem;
 }
 
+.about-card p{
+    color: #000000;
+}
+
+summary{
+    color: #381818;
+}
+
 .about-card p, .about-card summary{
     margin-bottom: 14px;
 
-    color: #000000;
 
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 
     line-height: 1.45;
 }
@@ -308,7 +324,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    padding: 20px;
+    padding: 0rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
 
     position:sticky;
     top: 1rem;
@@ -480,7 +498,7 @@ Atlas Will Fall variations
     margin-top:2rem;
 }
 
-.atlas .image-explanation{
+.image-explanation{
     margin-bottom: 40px;
     margin-top: 10px; 
     margin-left: 40px; 
@@ -488,6 +506,8 @@ Atlas Will Fall variations
 }
 
 .home .main-section{
+    width: 55vw;
+
     background-color: #ffffff;
 }
 
@@ -509,7 +529,6 @@ Atlas Will Fall variations
 }
 
 .home .content-layout {
-    
     padding-top: 3rem;
 
     grid-template-columns: 100% 0%;
@@ -521,22 +540,22 @@ Atlas Will Fall variations
 }
 
 .home h1{
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: #000;
 }
 
 .home h2{
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     color: #000;
 }
 
 .home h3{
-    font-size: 2.3rem;
+    font-size: 2rem;
     color: #000;
 }
 
 .home p{
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #000;
 }
 
@@ -547,7 +566,7 @@ hr{
 }
 
 .home-page-vertical-divide{
-    margin-top: 6rem;
+    margin-top: 4rem;
 }
 
 .featured-games-layout{
@@ -594,11 +613,21 @@ hr{
 }
 
 .main-section li{
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
 .main-section ul{
+    margin-left: 3rem;
+    margin-bottom: 3rem;
+}
+
+.home li{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.home ul{
     margin-left: 3rem;
     margin-bottom: 3rem;
 }
