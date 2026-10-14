@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ethan Hall | Game Development</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="ravenous-sky-media/favicon.png">
+</head>
+
+<body class="sculptor">
+    <!-- Header / Navigation -->
+    <header class="site-header">
+
+        <div class="site-title">
+            Ethan Hall Game Development Portfolio
+        </div>
+
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#featured">Featured Games</a>
+            <!-- <a href="design-work.html">Design Work</a> -->
+            <a href="index.html#about">About Me</a>
+        </nav>
+
+    </header>
+
+    <!-- Full-page background -->
+    <div class="page-background"></div>
+
+    <!-- Everything that sits on top of the background -->
+    <main class="main-section">
+
+        <!-- =========================================
+             MAIN CONTENT
+             ========================================= -->
+        <div class="content-layout">
+
+            <!-- 60% CONTENT COLUMN -->
+            <section class="content-column">
+
+                <article class="about-card">
+                    <!-- Video / first screenshot -->
+                    <div class="media-card video-card">
+                        <iframe
+                            src="https://www.youtube.com/embed/mYsgzUxJF8Q?si=ONBt3wr_eNCYQStj"
+                            title="Spell Sculptor Demo"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <h1 class="subtitle">What is Spell Sculptor?</h1>
+
+                    <p class="top-margin-2rem">
+                        Spell Sculptor is a game I developed during my senior year of my undergraduate at University of Kentucky.
+                    </p>
+
+                    <p>
+                        This project is a <strong>turn-based dungeon crawl</strong>
+                        in which I designed and implemented a magic system
+                        where the player can find a number of effects and modifiers
+                        that they can use to create unique spells.
+                    </p>
+                    
+                    <p>
+                        Additionally, I implemented <strong>two main variations of enemy AI</strong>, 
+                        one that controls basic enemies and one that controls a boss fight at the
+                        end of the game. 
+                    </p>
+
+                    <p>
+                        Finally, I <strong>designed two levels</strong>, 
+                        a main level and a robust tutorial, since the magic system 
+                        is a bit complex and requires proper explanation.
+                    </p>
+
+                    <p>
+                        This game was developed in Unity, and I am the <strong>sole
+                        programmer and designer</strong>. For art, I brought in and
+                        implemented asset packs I found online, and made some
+                        pixel art myself in Aseprite, particularly for UI elements.
+                    </p>
+
+                    <!-- Additional image -->
+                    <div class="media-card video-card">
+                        <iframe
+                            src="https://www.youtube.com/embed/jVpbnYvvjaY?si=P8-_y4XTOk0ugKdF"
+                            title="Spell Sculptor Enemies Taking Their Turns"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="image-explanation">Short video showcasing basic enemy AI, moving and attacking the player.</p>
+
+                    <h1 class="subtitle">The Design Behind Spell Sculptor</h1>
+
+                    <p>
+                        I wanted to give the player the tools to craft unique spells where the various spell components, those being effects and modifiers, interact with eachother and the 
+                        environment in interesting ways. For example, using the Arcane Bolt effect alone just creates a weak projectile. But pairing that Arcane Bolt with a Possess
+                        effect creates that same weak projectile, but this time it briefly takes control of the target it hits.
+                    </p>
+
+                    <p>
+                        There are other interactions as well, such as casting Inflame on a creature versus on a weapon. The creature takes damage over time, but the weapon instead deals
+                        additional damage on hit.
+                    </p>
+
+                    <p>
+                        By designing the game in this way, a sense of wonder is created. "What does this spell combo do?" "What will it do when I cast it on something else?"
+                        And that exploratory spirit is rewarded by the magic system in the form of powerful new spells that make the player feel unstoppable, or like a shadowy trickster
+                        who turns enemies against each other. Or, like a bit of a fool. What does the Summon Creature + Inflame combo do? Well, it summons a flaming creature 
+                        that takes damage over time, so I hope you weren't relying on that creature to stick around. 
+                        I wanted the system to be able to produce comedic failures in addition to the cool powers; it adds spice to the exploration.    
+                    </p>
+
+                    <!-- <details>
+                        <p>
+                            My goal with Spaghetti Spell was to add an interesting twist to the farming game genre; too often for my liking, the crops you plant in these games are fundamentally just little bundles of money. Outside of one-off quests, it usually doesn't mechanically matter what you grow.
+                        </p>
+                        <summary>
+                            <strong>Want a more in-depth design breakdown? Click here!</strong>
+                        </summary>
+                    </details> -->
+
+                    
+                    
+                    <h1 class="subtitle">Challenge: The Magic System</h1>
+                    <details>
+                        <h2 class="subtitle">Every effect needing to work with every other effect</h2>
+                        <p>
+                            One of my commitments for the magic system was making it completely modular. Any effect can be slotted in to any spell and do <strong>something</strong> 
+                            that's, hopefully, intuitive.
+                        </p>
+                        <p>
+                            To make this happen, I decided to structure the system in such a way that every spell has a single "Main Effect" which is then modified by a number of 
+                            "Secondary Effects". The main effect provides the target(s) for the secondary effects, and the secondary effects can perform their functions
+                            essentially as normal. 
+                        </p>
+                        <p>
+                            Different effects provide different kinds of targets to their secondaries. Damage dealing effects provide whatever it was that they damaged, whereas
+                            summoning effects provide whatever creature or object that was summoned.
+                        </p>
+                        <p>
+                            By being consistent on this, I created an implicit set of rules that the player can learn via experimentation, rewarding their exploration of the system
+                            in a meta context as well as in-game.
+                        </p>
+
+                        <summary>
+                            <strong>Click here</strong>
+                        </summary>
+                        
+                    </details>
+
+
+
+                    <h1 class="subtitle">Lesson: The Value of Tutorials for Developers</h1>
+                    <details>
+                        <div class="media-card video-card">
+                            <iframe
+                                src="https://www.youtube.com/embed/FPApJ0sys0c?si=DwjaSJwl2eTsO58q"
+                                title="Spell Sculptor Full Tutorial"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="image-explanation">A full showcase of the Spell Sculptor tutorial.</p>
+                        
+                        <p class="top-margin-2rem">
+                            Tutorials are valuable for players of course, but they're also valuable for developers themselves. To design a good tutorial, you have to deeply understand the systems you're explaining. And you have to understand the target audience as well so that you can communicate effectively with them. 
+                        </p>
+                        <p>
+                            Tutorials are also a lesson in brevity. No one wants to essentially sit in class for 30 minutes before they can play their shiny new game. Can you explain your mechanics concisely? If you can't, why? Maybe you just havent discovered the right angle to approach the explanation from, or maybe you don't understand your own systems as well as you should.
+                        </p>
+                        <p>
+                            Or you could come to the unfortunate realization that your systems are just too complex. If even you as the developer can't explain them well, how can you expect players to understand them?
+                        </p>
+                        <p>
+                            Admittedly, a lot of these lessons have come with hindsight. This is a roughly five year old project, and looking back on it now, I can poke many holes in how the tutorial was designed. Especially in regards to brevity; it's long and there's far too much text. Still, this was my first attempt at making a tutorial and Spell Sculptor is a complex game to try to teach. I'm proud of what I was able to do, and of the lessons I learned from it.
+                        </p>
+                        
+                        <!-- <p>
+                            That's why I decided to tackle the tutorial first, before the main level itself. I dont think that's necessarily the "best" or "correct" way to approach every project, but for this one in particular, the benefits I outlin2ed above were really helpful for formalizing exactly how I wanted the magic system to work.
+                        </p> -->
+
+                        <summary>
+                            <strong>Click here</strong>
+                        </summary>
+                        
+                    </details>
+                    
+                    
+                    
+                    <h1 class="subtitle">Usage of AI Tools</h1>
+                    <details>
+                        <p>I didn't use AI tools on this project at all. It predates readily available AI tools, or at the very least, predates my knowledge of them.</p>
+                        <summary>
+                            <strong>Click here</strong>
+                        </summary>
+                        
+                    </details>
+
+                </article>
+
+            </section>
+
+
+            <section class="screenshots-column">
+
+                <!-- Screenshot 1 -->
+                <div class="media-card">
+                    <img
+                        src="images/gameplay-1.png"
+                        alt="Spaghetti Spell gameplay"
+                    >
+                </div>
+
+
+                <!-- Screenshot 2 -->
+                <div class="media-card">
+                    <img
+                        src="images/gameplay-2.png"
+                        alt="Spaghetti Spell gameplay at night"
+                    >
+                </div>
+
+
+                <!-- Screenshot 3 -->
+                <div class="media-card">
+                    <img
+                        src="images/gameplay-3.png"
+                        alt="Spaghetti Spell gameplay"
+                    >
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

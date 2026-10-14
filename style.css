@@ -257,8 +257,8 @@ body {
     background: transparent;
 }
 
-.about-card h1, .about-card h2 {
-    margin-bottom: 10px;
+.about-card h1, .about-card h2, .about-card h3 {
+    margin-bottom: .8rem;
 
     color: #124d20;
 
@@ -482,7 +482,7 @@ Atlas Will Fall variations
 */
 
 .atlas .page-background{
-    background-image: none;
+    background-image: url("atlas-will-fall-media/Atlas\ Will\ Fall\ Screenshot\ 3.png");
     background-color: #494949;
 }
 
@@ -494,16 +494,20 @@ Atlas Will Fall variations
     background-color: #ecedf8f8;
 }
 
-.top-margin-40px {
+.top-margin-2rem {
     margin-top:2rem;
 }
 
-.image-explanation{
+.about-card .image-explanation{
     margin-bottom: 40px;
     margin-top: 10px; 
     margin-left: 40px; 
-    color: rgb(57, 57, 57);
+    color: rgb(49, 49, 49);
+
+    font-size: 1.05rem;
 }
+
+/* HOME Variations */
 
 .home .main-section{
     width: 55vw;
@@ -521,7 +525,7 @@ Atlas Will Fall variations
 
     z-index: -1;
 
-    background-image: url("home-media/Main Page BG.png");
+    /* background-image: url("home-media/background.gif"); */
 
     background-size: 100% auto;
     background-position: top center;
@@ -630,4 +634,32 @@ hr{
 .home ul{
     margin-left: 3rem;
     margin-bottom: 3rem;
+}
+
+/* Ravenous Sky Variations */
+.ravenous .page-background{
+    background-image: url("ravenous-sky-media/ravenous\ background.png");
+    background-color: #d9d8d8;
+}
+
+.ravenous h1, .ravenous h2{
+    color: #000;
+}
+
+.ravenous .main-section {
+    background-color: #ecedf8f8;
+}
+
+/* Spell Sculptor Variations */
+.sculptor .page-background{
+    background-image: url("spell-sculptor-media/background-2.png");
+    background-color: #5e5d5d;
+}
+
+.sculptor .main-section {
+    background-color: #ecedf8f8;
+}
+
+.sculptor h1, .sculptor h2{
+    color: #000;
 }

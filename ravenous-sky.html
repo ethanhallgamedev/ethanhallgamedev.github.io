@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ethan Hall | Game Development</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="ravenous-sky-media/favicon.png">
+</head>
+
+<body class="ravenous">
+    <!-- Header / Navigation -->
+    <header class="site-header">
+
+        <div class="site-title">
+            Ethan Hall Game Development Portfolio
+        </div>
+
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#featured">Featured Games</a>
+            <!-- <a href="design-work.html">Design Work</a> -->
+            <a href="index.html#about">About Me</a>
+        </nav>
+
+    </header>
+
+    <!-- Full-page background -->
+    <div class="page-background"></div>
+
+    <!-- Everything that sits on top of the background -->
+    <main class="main-section">
+
+        
+        
+        <!-- =========================================
+        MAIN CONTENT
+        ========================================= -->
+        <div class="content-layout">            
+            <!-- 60% CONTENT COLUMN -->
+            <section class="content-column">
+                
+                <article class="about-card">
+                    <!-- Video / first screenshot -->
+                    <div class="media-card video-card">
+                        <iframe
+                            src="https://www.youtube.com/embed/_X8TIOvG0ys?si=de1iNTlx7iDCmMNO"
+                            title="Ravenous Sky Gameplay"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="image-explanation">Ravenous Sky full playthrough, annotated so it points out specifically my contributions.</p>
+
+                    <h1 class="subtitle">What is Ravenous Sky?</h1>
+                    <p>
+                        Ravenous Sky is my capstone project for University of Central Florida's Florida Interactive Entertainment Academy (FIEA) master's program. It was developed over the course of 8 months by myself and nearly 30 other students and contractors.
+                    </p>
+
+                    <p>
+                        This project is a short <strong>Action Adventure</strong> in which I designed one of the core systems: grappling onto points in the environment to pull yourself towards them and prevent yourself from being blown off the level.
+                    </p>
+
+                    <p>
+                        Additionally, I worked together with our UI artist to <strong>implement the menus and any UI elements you see in game</strong>.
+                    </p>
+
+                    <p>
+                        Finally, I implemented the <strong>saving, loading, and checkpoint systems</strong>, ensuring that the player is respawned at sensible locations depending on where they fall off the level.
+                    </p>
+
+                    <p>
+                        This game was <strong>developed in Unreal Engine 5</strong>.
+                    </p>
+
+                    <!-- Additional image -->
+                    <div class="media-card video-card">
+                        <iframe
+                            src="https://www.youtube.com/embed/T_2axBa6qUw?si=bKPpy71Od4gCiMVu"
+                            title="Ravenous Sky Mines Section"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <p class="image-explanation">A good showcase of the grappling system I worked on.</p>
+
+                    <h1 class="subtitle">Grappling: The Value of Prototyping</h1>
+
+                    <details>
+                        <p>
+                            Grappling was a really fun system to design because there's so much you can do with it, and it can interface so well with a game's other mechanics. For example, wind is the main obstacle or "enemy" in Ravenous Sky, always threatening to push you off a ledge or off course as you fly. So when designing grappling, I knew I wanted a variation where, rather than having the player pull themselves to the grapple point, they would instead be anchored to one, preventing them from being moved beyond a certain point.
+                        </p>
+    
+                        <div class="content-image top-margin-2rem">
+                            <img
+                                src="ravenous-sky-media/Anchoring.gif"
+                                alt="Ravenous Sky Anchoring Showcase"
+                            >
+                        </div>
+                        <p class="image-explanation">The player anchoring to a point, keeping the wind and even debris from pushing them further.</p>
+    
+                        <p>
+                            The team and I spent much of our early prototyping time developing action blocks (small showcases for specific ideas and mechanics) just exploring the many implications of the grappling system.
+                        </p>
+                        <div class="content-image top-margin-2rem">
+                            <img
+                                src="ravenous-sky-media/Anchor Pull.gif"
+                                alt="Ravenous Sky Anchor Pull"
+                            >
+                        </div>
+                        <p class="image-explanation">This action block I made plays with the idea of a grappling point being launched from a destructible rock, pulling the player along with it.</p>
+                        
+                        <p>
+                            Not all of the ideas I and my fellow technical designers prototyped made it in to the final product, but that's ok. It's a unique strength of technical designers that we can single-handedly explore new and existing mechanics, meaning that even dud ideas only waste the time of one team member.
+                        </p>
+
+                        <summary>
+                            <strong>Click here</strong>
+                        </summary>
+                    </details>
+
+
+                    <h1 class="subtitle">Challenges: UI</h1>
+                    <details>
+                        <p>Unreal's UI system was not intuitive to me at first. There are a lot of potential elements to incorporate into your layouts, and it isn't always clear what their effects will be or how they'll interact with each other.</p>
+                        <p>That compounded with the fact that I was working directly with a UI artist, trying to bring their vision to life in engine. I had worked with artists before in smaller team projects, but never for UI and never on such a large project.</p>
+                        <p>I was more familiar with Unity at the time, so I solved the intuition problem by looking for ways in which Unreal's UI system was similar to Unity's. I started using the Canvas element much more while still making use of Unreal's uniquely powerful UI options, such as the fact that every UI widget is itself a unique blueprint.</p>
+                        <p>As far as working with the UI artist went, I made sure to check in with them frequently so that my UI implementations were up to their standards. I also helped them get better at providing clear, actionable quidance that I could more quickly and easily turn into UI.</p>
+                        
+                        <div class="content-image top-margin-2rem">
+                            <img
+                                src="ravenous-sky-media/Journal Showcase.gif"
+                                alt="The in-game journal for Ravenous Sky."
+                            >
+                        </div>
+                        <p class="image-explanation">The in-game journal, probably the most complicated UI I had to do. It starts empty, requiring entries to be unlocked and logged passively or through player's interacting with the environment. It also required each entry to populate the right side of the book with the correct info when clicked.</p>
+    
+                        <summary>
+                            <strong>Click here</strong>
+                        </summary>
+                    </details>
+
+
+
+
+                    <h1 class="subtitle">Lessons: Saving and Loading</h1>
+                    <details>
+    
+                        <p>
+                            The biggest challenge with saving and loading was resetting destructible objects that come after the checkpoint that the player loads into/respawns at. This task required me to partner up with the designer in charge of destruction.
+                        </p>
+
+                        <p>
+                            The solutions we came up with varied in both complexity and effectiveness. At one point, I made an editor tool that checked the space in between checkpoints for destructible objects, with each checkpoint storing a list of objects that came after it. Upon load, the checkpoint the player used would look through its list and instruct each object to reset itself.
+                        </p>
+
+                        <p>
+                            And that worked great! Until the destruction system had to be changed in such a way that it was no longer possible for destructible objects to simply reset themselves. The tool was useless at that point, and we went back to the drawing board.
+                        </p>
+
+                        <p>
+                            Eventually, we settled on simply reloading the level entirely when the player respawns. I will admit, I don't love that solution. But I'm glad that I encountered this problem regardless. It gave me the chance to practice adapting to changing conditions, and forced me to let go of my ego. To meet deadlines, you sometimes just have to implement messy and blunt solutions. Knowing when to do so, and how to do so in such a way that improving the solution later is possible, are important skills.
+                        </p>
+
+                        <summary>
+                            <strong>Click here</strong>
+                        </summary>
+                    </details>
+
+
+                    <h1 class="subtitle">Usage of AI Tools (ChatGPT)</h1>
+                    <details>
+                        <h2 class="subtitle">What I didn't use them for</h2>
+                        <ul>
+                            <li>Making design decisions</li>
+                        </ul>
+                            
+                        <h2 class="subtitle">What I did use them for</h2>
+                        <ul>
+                            <li>Researching Unreal's UI system</li>
+                            <li>Assistance writing widget blueprints early on</li>
+                            <li>Debugging*</li>
+                        </ul>
+
+                        <p>*ChatGPT may not always know what exactly is causing a bug; in fact, it often just hallucinates a cause. But it is an effective tool for getting un-stuck when you're tired and frustrated after chipping away at a bug for hours. It's a good inspiration generator, if not always a good solution generator.</p>
+
+                        <summary>
+                            <strong>Click here</strong>
+                        </summary>
+                        
+                    </details>
+
+
+                </article>
+
+            </section>
+
+
+            <!-- 40% SCREENSHOT COLUMN -->
+            <section class="screenshots-column">
+<!-- 
+                <div class="media-card video-card">
+                    <iframe
+                        src="https://www.youtube.com/embed/nV9xfpeQJb8?si=zamufUVu3FI8fBxn"
+                        title="Atlas Will Fall Gameplay"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+
+                <div class="media-card">
+                    <img
+                        src="atlas-will-fall-media/Atlas Will Fall Screenshot 1.png"
+                        alt="Spaghetti Spell gameplay"
+                    >
+                </div>
+
+
+                <div class="media-card">
+                    <img
+                        src="atlas-will-fall-media/Atlas Will Fall Screenshot 2.png"
+                        alt="Spaghetti Spell gameplay at night"
+                    >
+                </div>
+
+
+                <div class="media-card">
+                    <img
+                        src="atlas-will-fall-media/Atlas Will Fall Screenshot 3.png"
+                        alt="Spaghetti Spell gameplay"
+                    >
+                </div>
+-->
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

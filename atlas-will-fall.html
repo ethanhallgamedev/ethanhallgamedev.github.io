@@ -8,6 +8,7 @@
     <title>Ethan Hall | Game Development</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="ravenous-sky-media/favicon.png">
 </head>
 
 <body class="atlas">
@@ -20,9 +21,9 @@
 
         <nav class="site-nav">
             <a href="index.html">Home</a>
-            <a href="featured-projects.html">Featured Projects</a>
-            <a href="design-work.html">Design Work</a>
-            <a href="about.html">About Me</a>
+            <a href="index.html#featured">Featured Games</a>
+            <!-- <a href="design-work.html">Design Work</a> -->
+            <a href="index.html#about">About Me</a>
         </nav>
 
     </header>
@@ -33,28 +34,27 @@
     <!-- Everything that sits on top of the background -->
     <main class="main-section">
 
+        
+        
         <!-- =========================================
-             BANNER
-             ========================================= -->
-        <section class="banner">
-            <img
-                src="atlas-will-fall-media/Atlas Will Fall Banner1.png"
-                alt="Spaghetti Spell gameplay"
-            >
-        </section>
-
-
-        <!-- =========================================
-             MAIN CONTENT
-             ========================================= -->
-        <div class="content-layout">
-
+        MAIN CONTENT
+        ========================================= -->
+        <div class="content-layout">            
             <!-- 60% CONTENT COLUMN -->
             <section class="content-column">
-
+                
                 <article class="about-card">
+                    <!-- Video / first screenshot -->
+                    <div class="media-card video-card">
+                        <iframe
+                            src="https://www.youtube.com/embed/nV9xfpeQJb8?si=zamufUVu3FI8fBxn"
+                            title="Atlas Will Fall Gameplay"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
 
-                    <h1>What is Atlas Will Fall?</h1>
+                    <h1 class="subtitle">What is Atlas Will Fall?</h1>
 
                     <p>
                         Atlas Will Fall is a game I developed as an undergrad Computer Science student at the University of Kentucky.
@@ -91,56 +91,85 @@
                     </p>
 
                     <h1 class="subtitle">Challenges: The Level</h1>
+                    <details>
 
-                    <h2 class="">Level Structure and Backtracking</h2>
+                        <h2 class="">Level Structure and Backtracking</h2>
+    
+                        <p>
+    Interconnected worlds that block progression through the use of ability-based locks and keys are one of the defining hallmarks of a Metroidvania, so I knew I needed to design the level with that in mind.                    </p>
+                        <p>
+    So that begs the question: if the player encounters a lock they can't get past yet, and must return to that lock later, how does one make the required backtracking interesting?  
+    
+                        </p>
+                        <p>
+    I solved this problem in three main ways: teasing the player with upcoming challenges, fast shortcuts between related areas or at the ends of challenges,  and providing the player with a suite of fun movement abilities that significantly cut down travel time with skillful play.
+    
+                        </p>
+                        
+                        <div class="content-image top-margin-2rem">
+                            <img
+                                src="atlas-will-fall-media/First major tease.gif"
+                                alt="Atlas Will Fall first major tease"
+                            >
+                        </div>
+                        <p class="image-explanation">The player knows that the vents are breakable from the opposite side, and will shortly find out that the doors a little further down are controlled by switches somewhere else in the level, making them wonder what is behind both sets of obstacles.</p>
+    
+                        <div class="media-card video-card top-margin-2rem">
+                            <iframe
+                                src="https://www.youtube.com/embed/H9cHxwJAa7M?si=6ug_KkUMZLcDdtvn"
+                                title="Atlas Will Fall Shortcut Showcase"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="image-explanation">Both challenges on either side of the elevator shaft contain information needed to complete the other. The intended route is to mostly complete one of them, break the vent, fully complete the other one, and finally take the shortcut provided by the vents right back to the challenge the player couldn't quite complete before. </p>
+    
+                        <div class="media-card video-card top-margin-2rem">
+                            <iframe
+                                src="https://www.youtube.com/embed/L_X86h7ikd0?si=g1YzedOlHeCUFjd4"
+                                title="Atlas Will Fall Movement Showcase"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <p class="image-explanation">The base movement speed of the player is quite slow, which works together with the level design to encourage the player to experiment with their movement options, speeding up traversal significantly and making it more engaging.</p>
 
-                    <p>
-Interconnected worlds that block progression through the use of ability-based locks and keys are one of the defining hallmarks of a Metroidvania, so I knew I needed to design the level with that in mind.                    </p>
-                    <p>
-So that begs the question: if the player encounters a lock they can't get past yet, and must return to that lock later, how does one make the required backtracking interesting?  
-
-                    </p>
-                    <p>
-I solved this problem in three main ways: teasing the player with upcoming challenges, fast shortcuts between related areas or at the ends of challenges,  and providing the player with a suite of fun movement abilities that significantly cut down travel time with skillful play.
-
-                    </p>
-                    
-                    <div class="content-image top-margin-40px">
-                        <img
-                            src="atlas-will-fall-media/First major tease.gif"
-                            alt="Atlas Will Fall first major tease"
-                        >
-                    </div>
-                    <p class="image-explanation">The player knows that the vents are breakable from the opposite side, and will shortly find out that the doors a little further down are controlled by switches somewhere else in the level, making them wonder what is behind both sets of obstacles.</p>
-
-                    <div class="media-card video-card">
-                        <iframe
-                            src="https://www.youtube.com/embed/H9cHxwJAa7M?si=6ug_KkUMZLcDdtvn"
-                            title="Atlas Will Fall Shortcut Showcase"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <p class="image-explanation">Both challenges on either side of the elevator shaft contain information needed to complete the other. The intended route is to mostly complete one of them, break the vent, fully complete the other one, and finally take the shortcut provided by the vents right back to the challenge the player couldn't quite complete before. </p>
-
-                    <div class="media-card video-card">
-                        <iframe
-                            src="https://www.youtube.com/embed/L_X86h7ikd0?si=g1YzedOlHeCUFjd4"
-                            title="Atlas Will Fall Movement Showcase"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                    <p class="image-explanation">The base movement speed of the player is quite slow, which works together with the level design to encourage the player to experiment with their movement options, speeding up traversal significantly and making it more engaging.</p>
+                        <summary>
+                            <strong>Click here</strong>
+                        </summary>
+                    </details>
 
 
 
 
                     <h1 class="subtitle">Lesson: Playtesting</h1>
+                    <details>
+    
+                        <p>
+                            I made this version of Atlas Will Fall in 2023, before I fully understood the importance of playtesting. I've since shown it to some of my peers at University of Central Florida and discovered a couple interesting things: players do tend to follow the intended path and enjoy the level design, and they tend to struggle with the controls. 
+                        </p>
 
-                    <p>
-                        Talk about how I didn't do playtesting for this game, how that negatively impacted the controls in particular, and what my takeaways are from that. 
-                    </p>
+                        <p>
+                            The success of the level design was a pleasant surprise considering it hadn't been playtested. The iffy controls, now that I'm looking at this game with a more critical lens, are not a surprise. They are tailored to what I personally find comfortable after years of both clicking the mouse wheel to activate special abilities and making heavy use of the Alt key for dodging and sprinting. 
+                        </p>
+
+                        <p>
+                            Playtesting early, as soon as I had a usable player controller, would have quickly revealed how unintuitive and uncomfortable these controls are for many players. It's easy to fall into the trap of uncritically leaning into what you as the developer find intuitive, but that's a dangerous space to be in. Playtesting is invaluable not just for finding the best designs that resonate with your target audience, but for breaking yourself of your own bad habits.
+                        </p>
+
+                        <summary>
+                            <strong>Click here</strong>
+                        </summary>
+                    </details>
+
+                    <h1 class="subtitle">Usage of AI Tools</h1>
+                    <details>
+                        <p>I didn't use AI tools on this project at all. While I think early versions of ChatGPT did come out around the time I was working on Atlas Will Fall, I didn't use them.</p>
+                        <summary>
+                            <strong>Click here</strong>
+                        </summary>
+                        
+                    </details>
 
                 </article>
 
