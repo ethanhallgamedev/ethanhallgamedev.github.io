@@ -183,7 +183,7 @@ body {
 .main-section {
     width: 60vw;
 
-    min-width: 650px;
+    /* min-width: 650px; */
 
     margin: 0 auto;
     margin-top: 2rem;
