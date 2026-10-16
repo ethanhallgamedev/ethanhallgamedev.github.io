@@ -24,6 +24,25 @@ body {
 }
 
 
+
+.featured-games-layout{
+    display: grid;
+
+    grid-template-columns: 50% 50%;
+    
+    gap: 1rem;
+
+    align-items: stretch;
+    
+    width: 100%;
+}
+
+.featured-games-layout .project-thumbnail{
+    /* background-color: #000; */
+    /* outline: 3px solid black; */
+}
+
+
 /* =========================================
    FULL PAGE BACKGROUND
    ========================================= */
@@ -33,23 +52,23 @@ body {
     entire viewport.
 */
 
-.page-background {
+.page-background {    
     position: fixed;
-
-    inset: 0;
-
-    width: 120%;
-    height: 120%;
-
-    z-index: -1;
-
-    background-image: url("images/sky-background.png");
     
+    inset: 0;
+    
+    width: 100%;
+    height: 100%;
+    
+    z-index: -1;
+    
+    background-image: url("images/sky-background.png");
     background-color: rgba(70, 73, 73, 0.5); 
     background-blend-mode: multiply; 
-
-    background-size: cover;
-    background-position: center center;
+    
+    background-size: cover;    
+    background-position: top center;
+    
     background-repeat: no-repeat;
 }
 
@@ -287,8 +306,7 @@ summary{
 .about-card p, .about-card summary{
     margin-bottom: 14px;
 
-
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 
     line-height: 1.45;
 }
@@ -417,65 +435,6 @@ summary{
 }
 
 
-/* =========================================
-   RESPONSIVE DESIGN
-   ========================================= */
-
-/*
-    Once the screen becomes too narrow for
-    the desktop composition, stack everything.
-*/
-
-@media (max-width: 900px) {
-
-    .main-section {
-        width: 90vw;
-
-        min-width: 0;
-    }
-
-    .content-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .screenshots-column {
-        display: grid;
-
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .banner {
-        height: 130px;
-    }
-}
-
-
-/*
-    Phone layout
-*/
-
-@media (max-width: 600px) {
-
-    .main-section {
-        width: 100vw;
-    }
-
-    .banner {
-        height: 110px;
-    }
-
-    .screenshots-column {
-        grid-template-columns: 1fr;
-    }
-
-    .about-card {
-        padding: 18px;
-    }
-
-    .about-card p {
-        font-size: 0.85rem;
-    }
-}
 
 /*
 Atlas Will Fall variations
@@ -510,8 +469,6 @@ Atlas Will Fall variations
 /* HOME Variations */
 
 .home .main-section{
-    width: 55vw;
-
     background-color: #ffffff;
 }
 
@@ -520,16 +477,16 @@ Atlas Will Fall variations
 
     inset: 0;
 
-    width: 100vw;
-    height: auto;
+    width: 100%;
+    height: 100%;
 
     z-index: -1;
 
     /* background-image: url("home-media/background.gif"); */
 
-    background-size: 100% auto;
+    background-size: cover;    
     background-position: top center;
-    background-repeat: repeat-y;
+    /* background-repeat: repeat-y; */
 }
 
 .home .content-layout {
@@ -559,7 +516,6 @@ Atlas Will Fall variations
 }
 
 .home p{
-    font-size: 1.5rem;
     color: #000;
 }
 
@@ -573,30 +529,13 @@ hr{
     margin-top: 4rem;
 }
 
-.featured-games-layout{
-    display: grid;
-
-    grid-template-columns: 50% 50%;
-    
-    gap: 1rem;
-
-    align-items: stretch;
-    
-    width: 100%;
-}
-
-.featured-games-layout .project-thumbnail{
-    /* background-color: #000; */
-    /* outline: 3px solid black; */
-}
-
 .project-thumbnail .content-image{
     margin-top: 0;
 
     border-radius: 2rem;
 
-    width: 24vw;
-    height: 15vw;
+    width: 100%;
+    height: auto;
 }
 
 .project-thumbnail h3{
@@ -617,21 +556,11 @@ hr{
 }
 
 .main-section li{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
 }
 
 .main-section ul{
-    margin-left: 3rem;
-    margin-bottom: 3rem;
-}
-
-.home li{
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.home ul{
     margin-left: 3rem;
     margin-bottom: 3rem;
 }
@@ -662,4 +591,215 @@ hr{
 
 .sculptor h1, .sculptor h2{
     color: #000;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+/*
+    Once the screen becomes too narrow for
+    the desktop composition, stack everything.
+*/
+
+.menu-toggle,
+.menu-button {
+    display: none;
+}
+
+@media (max-width: 1920px) {
+    .main-section {
+        width: 70vw;
+    }
+}
+
+@media (max-width: 1600px) {
+    .site-title,.site-nav a {
+        font-size: 0.9rem;
+    }
+
+    .site-nav {
+        display: flex;
+
+        align-items: center;
+
+        gap: 2rem;
+    }
+
+    .featured-games-layout{
+        grid-template-columns: 100%;
+    }
+
+    .main-section {
+        width: 75vw;
+    }
+
+    .project-thumbnail .content-image{
+        /* height: auto; */
+    }
+
+    .about-card p, .about-card summary{
+        font-size: 1.2rem;
+    }
+
+    .main-section li{
+        font-size: 1.2rem;
+    }
+
+    .home h1{
+        font-size: 2.7rem;
+    }
+    .home h2{
+        font-size: 2rem;
+    }
+    .home h3{
+        font-size: 1.6rem;
+    }
+
+    .about-card h1{
+        font-size: 2.7rem;
+    }
+    .about-card h2{
+        font-size: 2rem;
+    }
+    .about-card h3{
+        font-size: 1.6rem;
+    }
+
+    .about-card .image-explanation{
+        font-size: 1rem;
+    }
+
+    
+}
+
+@media (max-width: 1350px) {
+    .site-title,.site-nav a {
+        font-size: 0.75rem;
+    }
+
+    .site-nav {
+        display: flex;
+
+        align-items: center;
+
+        gap: 1rem;
+    }
+
+    .main-section {
+        width: 80vw;
+    }
+
+    /* .project-thumbnail .content-image{
+        height: auto;
+        width: auto;
+    } */
+
+    .about-card p, .about-card summary{
+        font-size: .85rem;
+    }
+
+    .main-section li{
+        font-size: .85rem;
+    }
+
+    .home h1{
+        font-size: 2.2rem;
+    }
+    .home h2{
+        font-size: 1.5rem;
+    }
+    .home h3{
+        font-size: 1.2rem;
+    }
+
+    .about-card h1{
+        font-size: 1.65rem;
+    }
+    .about-card h2{
+        font-size: 1.25rem;
+    }
+    .about-card h3{
+        font-size: 1rem;
+    }
+
+    .about-card .image-explanation{
+        font-size: .85rem;
+    }
+}
+
+@media (max-width: 1050px) {
+
+    .site-header {
+        height: auto;
+        min-height: 60px;
+        /* padding: 1rem 5%; */
+        flex-wrap: wrap;
+    }
+
+    .site-title {
+        font-size: 0.9rem;
+    }
+
+    /* Hamburger button */
+    .menu-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        width: 28px;
+        height: 22px;
+
+        cursor: pointer;
+        order: 1;
+    }
+
+    .menu-button span {
+        display: block;
+        width: 100%;
+        height: 3px;
+
+        background-color: #6e3b3b;
+        border-radius: 2px;
+    }
+
+    /* Hide the actual checkbox */
+    .menu-toggle {
+        display: none;
+    }
+
+    /* Navigation is closed by default */
+    .site-nav {
+        display: none;
+        order: 2;
+
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+
+        padding-top: 1rem;
+    }
+
+    .site-nav a {
+        display: block;
+        width: 100%;
+    }
+
+    /* Checkbox checked = menu open */
+    .menu-toggle:checked ~ .site-nav {
+        display: flex;
+    }
+
+    /* Keyboard accessibility */
+    .menu-toggle:focus-visible + .menu-button {
+        outline: 2px solid #8d4949;
+        outline-offset: 5px;
+    }
+
+    .main-section {
+        width: 90vw;
+    }
+
 }
