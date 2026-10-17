@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ethan Hall | Game Development</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="ravenous-sky-media/favicon.png">
+</head>
+
+<body class="ravenous">
+    <!-- Header / Navigation -->
+    <header class="site-header">
+
+        <div class="site-title">
+            Ethan Hall Game Development Portfolio
+        </div>
+
+        <!-- Hamburger menu toggle -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+        <label for="menu-toggle" class="menu-button" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <nav class="site-nav">
+            <a href="index.html">Home</a>
+            <a href="index.html#featured">Featured Games</a>
+            <!-- <a href="design-work.html">Design Work</a> -->
+            <a href="index.html#about">About Me</a>
+            <a href="home-media/Ethan Hall Game Dev Resume.pdf">Download Resume</a>
+            <a href="https://ethanhallgamedev.itch.io/">Itch.io</a>
+            <a href="https://www.linkedin.com/in/ethan-patrick-hall">LinkedIn</a>
+        </nav>
+
+    </header>
+
+    <!-- Full-page background -->
+    <div class="page-background"></div>
+
+    <!-- Everything that sits on top of the background -->
+    <main class="main-section">
+        <!-- =========================================
+        MAIN CONTENT
+        ========================================= -->
+        <div class="content-layout">            
+            <!-- 60% CONTENT COLUMN -->
+            <section class="content-column">
+                
+                <article class="about-card">
+                    <!-- Video / first screenshot -->
+                    <div class="content-image top-margin-2rem">
+                        <img
+                            src="dnd-math-model-media/model-conclusions.png"
+                            alt="Ravenous Sky Anchor Pull"
+                        >
+                    </div>
+                    <p class="image-explanation">A preview of my mathematical model. This page condenses the findings of 7 other pages into a conclusion.</p>
+
+                    <h1 class="subtitle">Dungeons and Dragons Mathematical Model</h1>
+                    
+                    
+                    <p>
+                        In this project, I attempted to prove that in Dungeons and Dragons 5.5e, the Wizard class has significantly more, and more powerful, resources than the Fighter class does.
+                    </p>
+                    
+                    <p>
+                        In my attempt to prove that theory, I built out a large spreadsheet that basically uses traits like damage, area of effect, uses per day, and several other factors to put a numerical value on the Wizard class' spells. I them used similar methodology to rank Fighter abilities, and compared the two classes based on the value of their abilities and the frequency by which they can use said abilities.
+                    </p>
+                    
+                    <p>
+                        In the end, I actually didn't prove my theory, and the numbers for the Wizard vs. the Fighter favored the fighter at every character level. 
+                    </p>
+                    
+                    <a href="https://ethanhallgamedev.itch.io/dnd-mathematical-model" class="top-margin-2rem">Want to poke around in the spreadsheet? It's here on my Itch.io</a>
+                    
+                    <h1 class="subtitle">Challenge: Apples to Apples Comparisons</h1>
+                    <details>
+                        <p>
+                            Games feature a lot of asymmetrical abilities, especially games like Dungeons and Dragons with its many distinct classes. So the goal when building out a spreadsheet that's trying to compare the relative value of two different abilities from two different classes needs to be: How do we avoid apples to oranges comparisons? How do we draw actually useful comparisons between these wildly different abilities?
+                        </p>
+
+                        <p>
+                            I used two main strategies to try to accomplish that goal: modeling every Fighter ability as a spell,translating the mechanics of their abilities into spell mechanics; and mostly focusing on the Wizard spells that deal damage.
+                        </p>
+
+                        <p>
+                            For strategy 1, a lot of the fighter ability mechanics are actually pretty easy to translate. Most of them deal damage; a lot of spells already do that. Fighter attacks do have areas of effect, just like spells often do; they're just very small, single-enemy areas of effect. And where Wizards have Spell Slots that they expend to cast their spells and that are restored after a longe rest, Fighters also have "Slots" that they use to "cast" their own abilities.
+                        </p>
+                        <div class="content-image top-margin-2rem">
+                            <img
+                                src="dnd-math-model-media/ability-comparisons.png"
+                                alt="Ravenous Sky Anchor Pull"
+                            >
+                        </div>
+                        <p class="image-explanation">By modeling fighter abilities as spells, I was able to do things like this, where I rank spells by assigning each of their properties a multiplier, and then rank Fighter abilities the exact same way.</p>
+
+                        <p>
+                            For strategy 2, I decided to focus mostly on the Wizard spells that dealt damage. Most Fighter abilities deal damage, so it just made for easier comparisons. If I were to revise this project or redo it, I think this is the area that I would change most. Arguably, damage dealing spells are the weakest spells in a Wizard's arsenal, so to give them a more fair chance at beating the Fighter, I probably should have tried to analyze the Wizard's many other powerful options.
+                        </p>
+
+                        <summary>
+                            <strong>Click here</strong>
+                        </summary>
+                    </details>
+
+                    <h1 class="subtitle">Usage of AI Tools (ChatGPT, Google AI Overview)</h1>
+                    <details>
+                        <h2 class="subtitle">What I didn't use them for</h2>
+                        <ul>
+                            <li>Drawing any conclusions from the data</li>
+                            <li>Informing my spell-ranking strategy (i.e. it had no say in which spell properties I looked at or what their multipliers should be.)</li>
+                        </ul>
+                            
+                        <h2 class="subtitle">What I did use them for</h2>
+                        <ul>
+                            <li>Finding the correct Excel function based on what I needed in the moment</li>
+                        </ul>
+
+                        <summary>
+                            <strong>Click here</strong>
+                        </summary>
+                        
+                    </details>
+
+
+                </article>
+
+            </section>
+
+
+            <!-- 40% SCREENSHOT COLUMN -->
+            <section class="screenshots-column">
+<!-- 
+                <div class="media-card video-card">
+                    <iframe
+                        src="https://www.youtube.com/embed/nV9xfpeQJb8?si=zamufUVu3FI8fBxn"
+                        title="Atlas Will Fall Gameplay"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+
+                <div class="media-card">
+                    <img
+                        src="atlas-will-fall-media/Atlas Will Fall Screenshot 1.png"
+                        alt="Spaghetti Spell gameplay"
+                    >
+                </div>
+
+
+                <div class="media-card">
+                    <img
+                        src="atlas-will-fall-media/Atlas Will Fall Screenshot 2.png"
+                        alt="Spaghetti Spell gameplay at night"
+                    >
+                </div>
+
+
+                <div class="media-card">
+                    <img
+                        src="atlas-will-fall-media/Atlas Will Fall Screenshot 3.png"
+                        alt="Spaghetti Spell gameplay"
+                    >
+                </div>
+-->
+            </section>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
